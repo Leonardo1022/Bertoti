@@ -10,3 +10,7 @@ R: Esse trecho amplia mais o conceito de engenharia de software, em que ela é m
 ### Listar e explicar 3 exemplos de tradeoffs
 - Modelo relacional X Modelo não relacional:
 
+# Atividade 4
+### Exemplo de diagrama UML
+<img width="625" height="491" alt="image" src="https://github.com/user-attachments/assets/8287d9e6-59f4-46b8-b69b-122751a3f0f3" />
+

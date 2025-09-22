@@ -16,4 +16,53 @@ R: Esse trecho amplia mais o conceito de engenharia de software, em que ela é m
 ### Exemplo de diagrama UML
 <img width="625" height="491" alt="image" src="https://github.com/user-attachments/assets/8287d9e6-59f4-46b8-b69b-122751a3f0f3" />
 
+# Atividade 8
+Este é um programa simples usando a aplicação Ollama para simular um chat que lembre dos últimos prompts dados.
+### Código
+#### Main
+```java
+package Exemplo;
+
+import io.github.ollama4j.OllamaAPI;
+import io.github.ollama4j.exceptions.OllamaBaseException;
+import io.github.ollama4j.models.response.OllamaResult;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
+
+import java.io.IOException;
+
+public class Main {
+
+    public static void main(String[] args) throws OllamaBaseException, IOException, InterruptedException {
+        String prompt;
+        String host = "http://127.0.0.1:11434/";
+        String modelName = "qwen3:1.7b";
+        List<String> prompts = new ArrayList<>();
+        String memo;
+
+        OllamaAPI ollamaAPI = new OllamaAPI(host);
+
+        ollamaAPI.setRequestTimeoutSeconds(80);
+
+        System.out.println("Faca sua pergunta:");
+        Scanner sc = new Scanner(System.in);
+        prompt = "";
+        while (!prompt.equals("Sair")) {
+            prompt = sc.nextLine();
+            System.out.println("Pensando...");
+            prompts.add(" (");
+            prompts.add("Considere que as minhas outras falas foram:");
+            memo = String.join(" /n", prompts);
+            OllamaResult result =
+                    ollamaAPI.generate(modelName, prompt = (prompt + memo + " /n )"), null);
+            prompts.add(prompt);
+
+            System.out.println(result.getResponse());
+        }
+    }
+}
+```
+
 

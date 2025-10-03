@@ -16,6 +16,10 @@ R: Esse trecho amplia mais o conceito de engenharia de software, em que ela é m
 ### Exemplo de diagrama UML
 <img width="625" height="491" alt="image" src="https://github.com/user-attachments/assets/8287d9e6-59f4-46b8-b69b-122751a3f0f3" />
 
+# Atividade 7
+Exemplo de um programa Java feito em sala usando SQLite
+Link para o código: [Atividade 7](https://github.com/Leonardo1022/Bertoti/tree/main/EngenhariaSoftware/Atividade_7/Biblioteca_BD)
+
 # Atividade 8
 Este é um programa simples usando a aplicação Ollama para simular um chat que lembre dos últimos prompts dados.
 ### Código
@@ -64,5 +68,6 @@ public class Main {
     }
 }
 ```
+
 
 

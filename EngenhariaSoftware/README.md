@@ -14,14 +14,20 @@ R: Esse trecho amplia mais o conceito de engenharia de software, em que ela é m
 
 # Atividade 4
 ### Exemplo de diagrama UML
-<img width="625" height="491" alt="image" src="https://github.com/user-attachments/assets/8287d9e6-59f4-46b8-b69b-122751a3f0f3" />
+<img width="659" height="437" alt="image" src="https://github.com/user-attachments/assets/ad17f2ab-9310-4c28-8b37-7a098ab2e3e8" />
+
+# Atividades 5 e 6
+### Programa Java a partir do diagrama UML e com a implementação de testes
+Link para o código: [Atividades 5 e 6](Atividade_5_e_6)
 
 # Atividade 7
 Exemplo de um programa Java feito em sala usando SQLite
-Link para o código: [Atividade 7](https://github.com/Leonardo1022/Bertoti/tree/main/EngenhariaSoftware/Atividade_7/Biblioteca_BD)
+Link para o código: [Atividade 7](Atividade_7)
 
 # Atividade 8
 Este é um programa simples usando a aplicação Ollama para simular um chat que lembre dos últimos prompts dados.
+
+Link para o código: [Atividades 8](Atividade_8)
 ### Código
 #### Main
 ```java
@@ -68,6 +74,7 @@ public class Main {
     }
 }
 ```
+
 
 
 

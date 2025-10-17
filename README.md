@@ -6,5 +6,6 @@ Repositório de atividades da matéria de engenharia de software lecionada pelo 
 - [Atividade 2](https://github.com/Leonardo1022/Bertoti/tree/main/EngenhariaSoftware#atividade-2)
 - [Atividade 3](https://github.com/Leonardo1022/Bertoti/tree/main/EngenhariaSoftware#atividade-3)
 - [Atividade 4](https://github.com/Leonardo1022/Bertoti/tree/main/EngenhariaSoftware#atividade-4)
+- [Atividade 5 e 6](EngenhariaSoftware/Atividade_5_e_6)
 - [Atividade 7](https://github.com/Leonardo1022/Bertoti/blob/main/EngenhariaSoftware#atividade-7)
 - [Atividade 8](https://github.com/Leonardo1022/Bertoti/tree/main/EngenhariaSoftware#atividade-8)

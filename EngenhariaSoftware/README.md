@@ -26,7 +26,11 @@ Trade-offs and Costs
  
 How an organization makes decisions, based on the lessons of Time and Change and Scale and Growth
  
-**R:** Esse trecho amplia mais o conceito de engenharia de software, em que ela é mais do que apenas programação, ela é a junção disso com a consideração de aspectos como a **resistência ao tempo**, a **escalabilidade**, o **custo** e **tradeoffs**. A **resistência ao tempo** nesse caso diz o quanto que um programa pode resistir a passagem de tempo, ou seja, a inovações constantes e se mantendo relevante, esse é um conceito quase que impossível de se adquirir na totalidade de um programa pois isso necessita de uma lógica muito refinada e eficaz. A **escalabilidade** é a propriedade de algo aumentar o seu tamanho, porém o mais importante é o quanto que ele pode aumentar e em qual taxa. O **custo** inclui tanto o desenvolvimento da aplicação quanto sua manutenção e melhoria contínua para conseguir se manter relevante e atual. Por fim os tradeoffs são, de forma simples, escolhas que devem ser consideradas em todo o tipo de situação, no cenário de engenharia de software, um exemplo seria o uso de uma linguagem de alto nível ao custo de otimização e velocidade.
+**R:** Esse trecho amplia mais o conceito de engenharia de software, em que ela é mais do que apenas programação, ela é a junção disso com a consideração de aspectos como a **resistência ao tempo**, a **escalabilidade**, o **custo** e **tradeoffs**.
+- A **resistência ao tempo** nesse caso diz o quanto que um programa pode resistir a passagem de tempo, ou seja, a inovações constantes e se mantendo relevante, esse é um conceito quase que impossível de se adquirir na totalidade de um programa pois isso necessita de uma lógica muito refinada e eficaz.
+- A **escalabilidade** é a propriedade de algo aumentar o seu tamanho, porém o mais importante é o quanto que ele pode aumentar e em qual taxa.
+- O **custo** inclui tanto o desenvolvimento da aplicação quanto sua manutenção e melhoria contínua para conseguir se manter relevante e atual.
+- Por fim os **tradeoffs** são, de forma simples, escolhas que devem ser consideradas em todo o tipo de situação, no cenário de engenharia de software, um exemplo seria o uso de uma linguagem de alto nível ao custo de otimização e velocidade.
 
 # Atividade 3
 ### Listar e explicar 3 exemplos de tradeoffs
@@ -36,7 +40,7 @@ How an organization makes decisions, based on the lessons of Time and Change and
 
 # Atividade 4
 ### Exemplo de diagrama UML
-<img width="659" height="437" alt="image" src="https://github.com/user-attachments/assets/ad17f2ab-9310-4c28-8b37-7a098ab2e3e8" />
+<img width="693" height="503" alt="image" src="https://github.com/user-attachments/assets/34d2ae17-2726-4820-bac2-27e6f5f9e560" />
 
 # Atividades 5 e 6
 ### Programa Java a partir do diagrama UML e com a implementação de testes
@@ -96,6 +100,7 @@ public class Main {
     }
 }
 ```
+
 
 
 

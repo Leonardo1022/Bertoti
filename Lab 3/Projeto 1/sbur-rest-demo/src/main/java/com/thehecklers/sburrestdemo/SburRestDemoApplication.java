@@ -2,11 +2,18 @@ package com.thehecklers.sburrestdemo;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+//Sqlite
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +24,8 @@ import java.util.UUID;
 public class SburRestDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SburRestDemoApplication.class, args);
+		//SpringApplication.run(SburRestDemoApplication.class, args);
+		CoffeDAO.conectar();
 	}
 
 }
@@ -105,5 +113,37 @@ class Coffee {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+}
+
+class CoffeDAO {
+	private static final String bd_url = "jdbc:sqlite:main.bd";
+	private static String sql;
+
+    public static void conectar() {
+		try {
+			sql = Files.readString(Paths.get("src/main/resources/SQL/script.sql"));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		try (Connection conn = DriverManager.getConnection(bd_url)) {
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void inserirCafe(Coffee cafe) {
+		String sql = "INSERT INTO Cafe (nome) VALUES (?)";
+		try (Connection conn = DriverManager.getConnection(bd_url);
+			 PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, cafe.getName());
+			pstmt.executeUpdate();
+			System.out.println("Café inserido com sucesso!");
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

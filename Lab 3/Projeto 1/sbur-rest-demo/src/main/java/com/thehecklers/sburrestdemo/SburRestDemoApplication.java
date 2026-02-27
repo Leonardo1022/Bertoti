@@ -2,6 +2,7 @@ package com.thehecklers.sburrestdemo;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,10 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +22,13 @@ import java.util.UUID;
 public class SburRestDemoApplication {
 
 	public static void main(String[] args) {
-		//SpringApplication.run(SburRestDemoApplication.class, args);
-		CoffeDAO.conectar();
+		SpringApplication.run(SburRestDemoApplication.class, args);
+		//CoffeeDAO.conectar();
+		//Coffee c = new Coffee("branco");
+		//CoffeeDAO.inserirCafe(c);
+		//CoffeeDAO.mostrarCafes();
+		//CoffeeDAO.removerCafe(c);
+		//CoffeeDAO.mostrarCafes();
 	}
 
 }
@@ -33,15 +36,10 @@ public class SburRestDemoApplication {
 @RestController
 @RequestMapping("/coffees")
 class RestApiDemoController {
-	private final List<Coffee> coffees = new ArrayList<>();
+	private final List<Coffee> coffees;
 
 	public RestApiDemoController() {
-		coffees.addAll(List.of(
-				new Coffee("Café Cereza"),
-				new Coffee("Café Ganador"),
-				new Coffee("Café Lareño"),
-				new Coffee("Café Três Pontas")
-		));
+		coffees = CoffeeDAO.mostrarCafes();
 	}
 
 	@GetMapping
@@ -116,7 +114,7 @@ class Coffee {
 	}
 }
 
-class CoffeDAO {
+class CoffeeDAO {
 	private static final String bd_url = "jdbc:sqlite:main.bd";
 	private static String sql;
 
@@ -145,5 +143,36 @@ class CoffeDAO {
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void removerCafe(Coffee cafe) {
+		String sql = "DELETE FROM Cafe WHERE nome = ?";
+		try (Connection conn = DriverManager.getConnection(bd_url);
+			 PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, cafe.getName());
+			pstmt.executeUpdate();
+			System.out.println("Café removido com sucesso!");
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static ArrayList<Coffee> mostrarCafes() {
+		ArrayList<Coffee> cafes = new ArrayList<>();
+		String sql = "SELECT * FROM Cafe";
+		try (Connection conn = DriverManager.getConnection(bd_url);
+			 PreparedStatement pstmt = conn.prepareStatement(sql);
+			 ResultSet rs = pstmt.executeQuery()) {
+			while(rs.next()) {
+				System.out.println("Id: " + rs.getString(1) + "; " + "Nome: "+ rs.getString(2));
+				Coffee c = new Coffee(rs.getString(1), rs.getString(2));
+				cafes.add(c);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cafes;
 	}
 }

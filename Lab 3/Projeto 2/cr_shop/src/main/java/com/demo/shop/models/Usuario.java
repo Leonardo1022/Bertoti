@@ -3,10 +3,10 @@ package com.demo.shop.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Usuario")
+@Table(name = "usuario")
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "us_id")
     private Long id;
 
@@ -19,6 +19,7 @@ public class Usuario {
     @Column(name = "us_email", nullable = false, unique = true)
     private String email;
 
+    protected Usuario() {}
     public Usuario(String nome, String senha, String email) {
         this.nome = nome;
         this.senha = senha;

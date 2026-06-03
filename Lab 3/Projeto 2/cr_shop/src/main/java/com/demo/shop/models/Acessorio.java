@@ -2,48 +2,48 @@ package com.demo.shop.models;
 
 import jakarta.persistence.*;
 
-import java.io.File;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Acessorio")
+@Table(name = "acessorio")
 public class Acessorio {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ac_id")
-    private final int id;
+    private Long id;
 
     @Column(name = "ac_nome", nullable = false)
     private String nome;
 
     @Column(name = "ac_foto", unique = true)
-    private File foto;
+    private String foto;
 
     @Column(name = "ac_preco", nullable = false)
-    private float preco;
+    private BigDecimal preco;
 
     //FKs
-
+    @ManyToMany(mappedBy = "acessorios")
     private List<Cor> cores = new ArrayList<>();
 
-    public Acessorio(int id, String nome, File foto, float preco) {
-        this.id = id;
+    protected Acessorio() {}
+    public Acessorio(String nome, String foto, BigDecimal preco) {
         this.nome = nome;
         this.foto = foto;
         this.preco = preco;
     }
 
-    public int getId() {return id;}
+    public Long getId() {return id;}
 
     public String getNome() {return nome;}
     public void setNome(String nome) {this.nome = nome;}
 
-    public File getFoto() {return foto;}
-    public void setFoto(File foto) {this.foto = foto;}
+    public String getFoto() {return foto;}
+    public void setFoto(String foto) {this.foto = foto;}
 
-    public float getPreco() {return preco;}
-    public void setPreco(float preco) {this.preco = preco;}
+    public BigDecimal getPreco() {return preco;}
+    public void setPreco(BigDecimal preco) {this.preco = preco;}
 
     public List<Cor> getCores() {return cores;}
     public void setCores(List<Cor> cores) {this.cores = cores;}

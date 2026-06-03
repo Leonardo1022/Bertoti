@@ -2,8 +2,6 @@ package com.demo.shop.services;
 
 import com.demo.shop.models.Amigurumi;
 import com.demo.shop.models.Cor;
-import com.demo.shop.repositories.AcessorioRepository;
-import com.demo.shop.repositories.AmigurumiAcessorioRepository;
 import com.demo.shop.repositories.AmigurumiRepository;
 import com.demo.shop.repositories.CorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +18,6 @@ public class AmigurumiService {
     @Autowired
     private CorRepository corRepository;
 
-    @Autowired
-    private AmigurumiAcessorioRepository amAcRepository;
-
     public List<Amigurumi> listarTodos() {
         return amigurumiRepository.findAll();
     }
@@ -37,13 +32,23 @@ public class AmigurumiService {
         return amigurumiRepository.save(amigurumi);
     }
 
+    public Amigurumi atualizar(Long id, Amigurumi dados) {
+        Amigurumi existente = amigurumiRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Amigurumi não encontrado"));
+
+        existente.setNome(dados.getNome());
+        existente.setFoto(dados.getFoto());
+        existente.setPreco(dados.getPreco());
+        return amigurumiRepository.save(existente);
+    }
+
     public void deletar(Long id) {
         amigurumiRepository.deleteById(id);
     }
 
 //——— Tabela Amigurumi_Cor
     public List<Amigurumi> buscarAmigurumisPorCor(String corCodigo) {
-        return amigurumiRepository.findByCorId(corCodigo);
+        return amigurumiRepository.findByCorCodigo(corCodigo);
     }
     // Criar pedido com produtos
     public Amigurumi criarAmigurumi(Amigurumi amigurumi, List<String> corCodigos) {

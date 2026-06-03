@@ -1,5 +1,6 @@
 package com.demo.shop.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.File;
@@ -8,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Amigurumi")
+@Table(name = "amigurumi")
 public class Amigurumi {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "am_id")
     private Long id;
 
@@ -30,13 +31,14 @@ public class Amigurumi {
     private List<Customizacao> customizacoes = new ArrayList<>();
 
     // - Item
+    @JsonIgnore
     @OneToMany(mappedBy = "amigurumi", cascade = CascadeType.ALL)
     private List<Item> itens = new ArrayList<>();
 
     // - AmCor
     @ManyToMany
     @JoinTable(
-            name = "AmCor",         // nome da tabela intermediária
+            name = "amcor",         // nome da tabela intermediária
             joinColumns = @JoinColumn(name = "am_id"),
             inverseJoinColumns = @JoinColumn(name = "cor_codigo")
     )
@@ -45,7 +47,7 @@ public class Amigurumi {
     // - AmAc
     @ManyToMany
     @JoinTable(
-            name = "AmAc",
+            name = "amac",
             joinColumns = @JoinColumn(name = "am_id"),
             inverseJoinColumns = @JoinColumn(name = "ac_id")
     )

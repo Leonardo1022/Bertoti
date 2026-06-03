@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Cor")
+@Table(name = "cor")
 public class Cor {
     @Id
     @Column(name = "cor_codigo")
@@ -25,7 +25,7 @@ public class Cor {
     // - CorAc
     @ManyToMany
     @JoinTable(
-            name = "CorAc",
+            name = "corac",
             joinColumns = @JoinColumn(name = "cor_codigo"),
             inverseJoinColumns = @JoinColumn(name = "ac_id")
     )

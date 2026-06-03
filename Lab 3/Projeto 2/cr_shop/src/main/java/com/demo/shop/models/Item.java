@@ -1,14 +1,15 @@
 package com.demo.shop.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 // para dinheiro
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "Item")
+@Table(name = "item")
 public class Item {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "it_id")
     private Long id;
 
@@ -22,12 +23,12 @@ public class Item {
     @JoinColumn(name = "am_id")
     private Amigurumi amigurumi;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "com_id")
     private Compra compra;
 
     protected Item() {}
-
     public Item(Integer quantidade, BigDecimal preco, Amigurumi amigurumi, Compra compra) {
         this.quantidade = quantidade;
         this.preco = preco;

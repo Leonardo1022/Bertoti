@@ -3,10 +3,10 @@ package com.demo.shop.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Opcao")
+@Table(name = "opcao")
 public class Opcao {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "op_id")
     private Long id;
 

@@ -30,6 +30,11 @@ public class AmigurumiController {
         return service.salvar(amigurumi);
     }
 
+    @PutMapping("/{id}")  // PUT /amigurumis/1
+    public Amigurumi atualizar(@PathVariable Long id, @RequestBody Amigurumi amigurumi) {
+        return service.atualizar(id, amigurumi);
+    }
+
     @DeleteMapping("/{id}") // DELETE /amigurumis/1
     public void deletar(@PathVariable Long id) {
         service.deletar(id);

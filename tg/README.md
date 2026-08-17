@@ -1,7 +1,7 @@
 # Sobre mim
-<p align="center"><img src="" width="20%" style="border-radius: 50%; width: 150px; height: 150px; display: block; margin: 0 auto;"></p>
+<p align="center"><img src="assets/Foto_perfil.jpg" width="20%" style="border-radius: 50%; width: 150px; height: 150px; display: block; margin: 0 auto;"></p>
 
-...
+Estudante de Banco de Dados pela Fatec Jessen Vidal (2025–2027), com experiência administrativa e projetos em análise de dados. Interesse principal: desenvolvimento backend e análise/modelagem de dados.
 
 # Contatos
 - [Git]()
@@ -42,8 +42,21 @@ a exportação de dados para o sistema oficial.
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ### Contribuições Pessoais (Dev, front-end)
-- implementei funcionalidades de comunicação REST com o back-end
-- estilização das guias, implementação do CRUD para técnicos e viaturas
+1. Implementei funcionalidades de comunicação REST do front para o banco de dados para o CRUD de técnicos e viaturas
+    - Utilizei a extensão Vue router para formular a comunicação com o banco por API, aplicando todos os elementos do CRUD
+
+1. Estilização das páginas de cadastro de técnico e viatura, visualização em tabela para o administrador e parte da sidebar
+    - Utilizei o Vue para a estilização das páginas. Segue algumas delas:
+    #### Registros
+    <img src="assets/Registros_gerais.png">
+    
+    #### Cadastro de viaturas
+    <img src="assets/Registro_viatura.png">
+
+    #### Cadastro de técnicos
+    <img src="assets/Registro_tecnico.png">
+
+1. Implementei parcialmente a lógica de navegação entre páginas
 
 ### Habilidades
 
@@ -52,12 +65,13 @@ a exportação de dados para o sistema oficial.
   
   - **Vue JS** : Sei utilizar com autonomia
   - **Java** : Sei utilizar com ajuda
-  - **Springboot** : Sei utilizar com ajuda
+  - **Spring** : Sei utilizar com ajuda
+  - **Trello** : Sei utilizar com autonomia
 </details>
 
 <details>
   <summary>Soft Skills</summary>
 
-  - **Comunicação** : Interagi rotineiramente com a minha equipe para relatar a situação atual da minha tarefa, além de propor por mudanças e soluções em reuniões formuladas
-  pela equipe
+  - **Comunicação** : Interagi rotineiramente com a minha equipe para relatar a situação atual das minhas tarefas, além de propor por mudanças e soluções em reuniões formuladas pela equipe
+  - **Cooperação** : Ajudei meus colegas quando terminava minhas tarefas antes do prazo e me mostrava disponível quando não ajudava
 </details>

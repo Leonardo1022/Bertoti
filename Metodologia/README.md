@@ -21,6 +21,8 @@ Estudante de Banco de Dados pela Fatec Jessen Vidal (2025–2027), com experiên
 
 # Projetos
 
+<img width="1074" height="196" alt="projeto_3" src="assets/gtv_logo.png" />
+
 ## [IPEM GTV](https://github.com/Leonardo1022/IPEM-GTV) (3ºSemestre, 2026-1)
 
 ### Problema
@@ -33,45 +35,59 @@ técnicos realizem apontamentos rápidos e que gestores visualizem indicadores d
 a exportação de dados para o sistema oficial.
 
 ### Tecnologias Utilizadas
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Springboot](https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
-![Vue.JS](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
+![Vue.JS](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
 
 ### Contribuições Pessoais (Dev, front-end)
-1. Implementei funcionalidades de comunicação REST do front para o banco de dados para o CRUD de técnicos e viaturas
-    - Utilizei a extensão Vue router para formular a comunicação com o banco por API, aplicando todos os elementos do CRUD
 
-1. Estilização das páginas de cadastro de técnico e viatura, visualização em tabela para o administrador e parte da sidebar
-    - Utilizei o Vue para a estilização das páginas. Segue algumas delas:
-    #### Registros
-    <img src="assets/Registros_gerais.png">
-    
-    #### Cadastro de viaturas
-    <img src="assets/Registro_viatura.png">
+<details>
+    <summary><strong>Front-end - Lógica de navegação</strong></summary>
+    <p></p>
+    <p>Implementei parcialmente a lógica de navegação entre páginas com o Vue router, junto com parte da estilização da sidebar geral</p>
+</details>
 
-    #### Cadastro de técnicos
-    <img src="assets/Registro_tecnico.png">
+<details>
+    <summary><strong>Front-end - Página de vizualização e cadastro de viatura</strong></summary>
+    <p></p>
+    <p>Fiz a estilização e lógica da página pelo front-end, utilizando Vue e estabeleci a conexão com o back-end e com o bd</p>
+    <img width="1916" height="910" alt="registro_viatura" src="assets/Registro_viatura.png" />
+</details>
 
-1. Implementei parcialmente a lógica de navegação entre páginas
+<details>
+    <summary><strong>Front-end - Página de visualização e cadastro de técnico</strong></summary>
+    <p></p>
+    <p>Fiz a estilização e lógica da página pelo front-end, utilizando Vue e estabeleci a conexão com o back-end e com o bd</p>
+    <img width="1916" height="910" alt="registro_viatura" src="assets/Registro_tecnico.png" />
+</details>
+
+<details>
+    <summary><strong>Front-end - Página de vizualização geral de registros</strong></summary>
+    <p></p>
+    <p>Fiz a estilização e lógica da página pelo front-end, utilizando Vue e estabeleci a conexão com o back-end e com o bd</p>
+    <img width="1916" height="910" alt="registro_viatura" src="assets/Registros_gerais.png" />
+</details>
 
 ### Habilidades
 
-<details>
-  <summary>Hard Skills</summary>
-  
-  - **Vue JS** : Sei utilizar com autonomia
-  - **Java** : Sei utilizar com ajuda
-  - **Spring** : Sei utilizar com ajuda
-  - **Trello** : Sei utilizar com autonomia
-</details>
+#### Hard Skills
 
-<details>
-  <summary>Soft Skills</summary>
+- **Vue JS** : Sei utilizar com autonomia
+  - Utilizei o framework para fazer toda a lógica e estilização das páginas
+- **Java** : Sei utilizar com ajuda
+  - Consigo fazer cobertura de testes com o Junit, configuração do Maven e lógica geral da linguagem
+- **Spring** : Sei utilizar com ajuda
+  - Consigo estabelecer a conexão com o bd, funcionamento de entidades, repositórios, controllers e services
+- **Docker** : Sei utilizar com ajuda
+  - Consigo ler e configurar um ambiente em Docker 
+- **Trello** : Sei utilizar com autonomia
+  - Usei para comunicar o meu progresso com a equipe
 
-  - **Comunicação** : Interagi rotineiramente com a minha equipe para relatar a situação atual das minhas tarefas, além de propor por mudanças e soluções em reuniões formuladas pela equipe
-  - **Cooperação** : Ajudei meus colegas quando terminava minhas tarefas antes do prazo e me mostrava disponível quando não ajudava
-</details>
+#### Soft Skills
+
+- **Comunicação** : Interagi rotineiramente com a minha equipe para relatar a situação atual das minhas tarefas, além de propor por mudanças e soluções em reuniões formuladas pela equipe
+- **Cooperação** : Ajudei meus colegas quando terminava minhas tarefas antes do prazo e me mostrava disponível quando não ajudava
